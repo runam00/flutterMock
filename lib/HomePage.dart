@@ -9,21 +9,35 @@ class HomePage extends StatelessWidget{
         title : Text("スタート画面")
       ),
       body : Center(
-        child: ElevatedButton(
-          child: Text("スタート"),
-          style: ElevatedButton.styleFrom(
-            primary: Colors.blue,
-            onPrimary: Colors.white,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // タイトル
+            Container(
+              margin: EdgeInsets.all(30),
+              child: Text(
+                "お菓子タイプ性格診断",
+                style: TextStyle(fontSize: 30),
+                ),
             ),
-          ),
-          onPressed: (){
-            Navigator.push(context, MaterialPageRoute(
-              builder: (context) => QuestionPage()
-            ));
-          },
-        ),
+            ElevatedButton(
+              child: Text("スタート"),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.blue,
+                onPrimary: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) => QuestionPage()
+                  )
+                );
+              },
+            ),
+          ],
+        )
       )
     );
   }
