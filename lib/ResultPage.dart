@@ -3,6 +3,10 @@ import 'HomePage.dart';
 import 'ResultListPage.dart';
 
 class ResultPage extends StatelessWidget{
+
+  ResultPage(this.image_path);
+  String image_path;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
