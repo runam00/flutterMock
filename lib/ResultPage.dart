@@ -4,8 +4,8 @@ import 'ResultListPage.dart';
 
 class ResultPage extends StatelessWidget{
 
-  ResultPage(this.image_path);
-  String image_path;
+  ResultPage(this.image_item);
+  Map<String, String> image_item;  // キー：お菓子タイプの名前 値：画像のパス
 
   @override
   Widget build(BuildContext context) {
@@ -25,11 +25,11 @@ class ResultPage extends StatelessWidget{
 
             // お菓子タイプの画像
             Container(
-              width: 500,
-              child: FittedBox(
+              width: 300,
+              child: Image.asset(
+                image_item.values.first,
                 fit: BoxFit.fitWidth,
-                child: Image.asset(image_path)
-              ),
+                )
             ),
 
             // お菓子タイプ一覧ページに遷移するボタン
