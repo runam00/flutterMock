@@ -23,6 +23,15 @@ class ResultPage extends StatelessWidget{
               child: Text("あなたのお菓子タイプは…", style: TextStyle(fontSize: 24),),
             ),
 
+            // お菓子タイプの画像
+            Container(
+              width: 500,
+              child: FittedBox(
+                fit: BoxFit.fitWidth,
+                child: Image.asset(image_path)
+              ),
+            ),
+
             // お菓子タイプ一覧ページに遷移するボタン
             Container(
               margin: EdgeInsets.symmetric(vertical: 30),
@@ -45,7 +54,7 @@ class ResultPage extends StatelessWidget{
                 },
               ),
             ),
-            
+
             // スタートに戻るボタン
             Container(
               child: ElevatedButton(
