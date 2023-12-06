@@ -28,7 +28,7 @@ class QuestionPage extends StatelessWidget{
                   ),
                 ),
                 onPressed: (){
-                  Navigator.pushReplacement(
+                  Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => ResultPage(generateRandomImageItem()),
