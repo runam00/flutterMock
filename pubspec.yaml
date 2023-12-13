@@ -73,6 +73,7 @@ flutter:
   # 12/06 追記
   assets:
     - assets/images/
+    - assets/sweets_types.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
