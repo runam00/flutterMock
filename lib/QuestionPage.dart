@@ -1,8 +1,21 @@
 import 'package:flutter/material.dart';
+import 'dart:convert';
+import 'package:flutter/services.dart';
 import 'ResultPage.dart';
 import 'dart:math';
 
 class QuestionPage extends StatelessWidget{
+
+  List<dynamic> sweetsTypes = [];
+
+  QuestionPage(){
+    initialize();
+  }
+
+  Future<void> initialize() async {
+    await loadJsonAsset();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +44,7 @@ class QuestionPage extends StatelessWidget{
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ResultPage(generateRandomImageItem()),
+                      builder: (context) => ResultPage(getRandomSweetsType()),
                     )
                   );
                 },
@@ -55,5 +68,15 @@ class QuestionPage extends StatelessWidget{
     ];
     var random = new Random();
     return image_paths[random.nextInt(image_paths.length)];
+  }
+
+  Future<void> loadJsonAsset() async {
+    String loadData = await rootBundle.loadString('sweets_types.json');
+    sweetsTypes = jsonDecode(loadData);
+  }
+
+  dynamic getRandomSweetsType(){
+    var random = new Random();
+    return sweetsTypes[random.nextInt(sweetsTypes.length)];
   }
 }

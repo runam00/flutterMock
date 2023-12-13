@@ -4,8 +4,8 @@ import 'ResultListPage.dart';
 
 class ResultPage extends StatelessWidget{
 
-  ResultPage(this.image_item);
-  Map<String, String> image_item;  // キー：お菓子タイプの名前 値：画像のパス
+  ResultPage(this.sweetsType);
+  dynamic sweetsType;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class ResultPage extends StatelessWidget{
             Container(
               width: 300,
               child: Image.asset(
-                image_item.values.first,
+                sweetsType['path'],
                 fit: BoxFit.fitWidth,
                 )
             ),
